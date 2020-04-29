@@ -17,7 +17,7 @@ public final class ConnectionManager {
 
     /**
      * Levert een connectie naar de be.vives.ti.Dao. Leest hiervoor uit het bestand
-     * DBINIT.properties
+     * DB.properties
      *
      * @return connectie-object naar de be.ti.vives.DAO.
      * @throws DBException wanner de be.vives.ti.DAO niet toegankelijk is.

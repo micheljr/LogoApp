@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="180.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="laErrorMessage" layoutX="14.0" layoutY="14.0" prefHeight="66.0" prefWidth="573.0" textFill="RED">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="215.0" layoutY="111.0" mnemonicParsing="false" onAction="#alert" prefHeight="25.0" prefWidth="164.0" text="Show more..." />
+   </children>
+</AnchorPane>

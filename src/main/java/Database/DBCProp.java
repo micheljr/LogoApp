@@ -1,8 +1,8 @@
-package DAO.connect;
+package Database;
 
 import java.util.Properties;
 
-public class DBProp {
+public class DBCProp {
 
     private static String dbUrl;
     private static String driver;
@@ -11,13 +11,13 @@ public class DBProp {
 
 
     /**
-     * Haalt de URL, driver paswoord en login uit het bestand DB.properties en
+     * Haalt de URL, driver paswoord en login uit het bestand DBINIT.properties en
      * vult deze in in de overeenkomstige velden.
      */
-    private DBProp() {
+    private DBCProp() {
         Properties appProperties = new Properties();
         try {
-            String propertiesFile = "/database/DB.properties";
+            String propertiesFile = "/database/DBINIT.properties";
             appProperties.load(this.getClass().getResourceAsStream(propertiesFile));
 
             dbUrl = appProperties.getProperty("dbUrl");
@@ -36,7 +36,7 @@ public class DBProp {
      */
     public static String getDbUrl() {
         if (dbUrl == null) {
-            DBProp db = new DBProp();
+            DBCProp db = new DBCProp();
         }
         return dbUrl;
     }
@@ -46,7 +46,7 @@ public class DBProp {
      */
     public static String getDriver() {
         if (driver == null) {
-            DBProp db = new DBProp();
+            DBCProp db = new DBCProp();
         }
         return driver;
     }
@@ -56,7 +56,7 @@ public class DBProp {
      */
     public static String getLogin() {
         if (login == null) {
-            DBProp db = new DBProp();
+            DBCProp db = new DBCProp();
         }
         return login;
     }
@@ -66,8 +66,9 @@ public class DBProp {
      */
     public static String getPaswoord() {
         if (paswoord == null) {
-            DBProp db = new DBProp();
+            DBCProp db = new DBCProp();
         }
         return paswoord;
     }
 }
+
