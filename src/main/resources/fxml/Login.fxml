@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="247.0" prefWidth="410.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="tfLogin" layoutX="146.0" layoutY="36.0" />
+      <PasswordField fx:id="pwPaswoord" layoutX="146.0" layoutY="77.0" />
+      <Label layoutX="101.0" layoutY="40.0" text="Login" />
+      <Label layoutX="79.0" layoutY="81.0" text="Paswoord" />
+      <Button layoutX="146.0" layoutY="117.0" mnemonicParsing="false" onAction="#laadKeuzeScherm" prefHeight="25.0" prefWidth="149.0" text="Login" />
+      <Label fx:id="laErrorMessage" layoutX="18.0" layoutY="195.0" prefHeight="39.0" prefWidth="380.0" textFill="RED" />
+      <Button layoutX="146.0" layoutY="158.0" mnemonicParsing="false" onAction="#openWebpage" prefHeight="25.0" prefWidth="149.0" text="Registreren" />
+   </children>
+</AnchorPane>
