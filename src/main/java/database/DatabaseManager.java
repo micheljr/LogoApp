@@ -1,4 +1,4 @@
-package Database;
+package database;
 
 import DAO.connect.DBProp;
 import exception.DBException;

@@ -1,7 +1,7 @@
 package ui;
 
 import DAO.AccountDAO;
-import Database.DatabaseManager;
+import database.DatabaseManager;
 import exception.DBException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -9,10 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import service.AccountService;
-import ui.controller.ErrorController;
-import ui.controller.KeuzesController;
-import ui.controller.LoginController;
-import ui.controller.RegistrerenController;
+import ui.controller.*;
+import ui.controller.DossierBeheer.DossierBeheerController;
+import ui.controller.KlantBeheer.KlantToevoegenController;
+import ui.controller.FactuurBeheer.FactuurBeheerController;
+import ui.controller.KlantBeheer.KlantBeheerController;
 
 import java.sql.Connection;
 
@@ -52,7 +53,7 @@ public class LOGOapp extends Application {
         
     }
 
-    public void laadErrorScherm(DBException dbe){
+    public void laadErrorScherm(Exception dbe){
         try {
             String fxmlFile = "/fxml/Error.fxml";
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
@@ -90,12 +91,12 @@ public class LOGOapp extends Application {
         }
     }
 
-    public void laadKeuzeScherm(String login){
+    public void laadMainScherm(String login){
         try {
-            String fxmlFile = "/fxml/Keuzes.fxml";
+            String fxmlFile = "/fxml/Main.fxml";
             FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
 
-            KeuzesController controller = new KeuzesController();
+            MainController controller = new MainController(createAccountService());
             controller.setData(login);
 
             loader.setController(controller);
@@ -123,7 +124,92 @@ public class LOGOapp extends Application {
             controller.setMainApp(this);
 
             Scene scene = new Scene(root);
-            stage.setTitle("LogoApp");
+            stage.setTitle("Registratie");
+            stage.setScene(scene);
+        } catch (Exception e) {
+            System.out.println("!!! - " + e.getMessage());
+        }
+    }
+
+    public void laadDossierBeheer(String login) {
+        try {
+            String fxmlFile = "/fxml/DossierBeheer.fxml";
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+
+            DossierBeheerController controller = new DossierBeheerController();
+            controller.setData(login);
+
+            loader.setController(controller);
+            Parent root = loader.load();
+
+            controller.setMainApp(this);
+
+            Scene scene = new Scene(root);
+            stage.setTitle("DossierBeheer");
+            stage.setScene(scene);
+        } catch (Exception e) {
+            System.out.println("!!! - " + e.getMessage());
+        }
+    }
+
+    public void laadFactuurBeheer(String login) {
+        try {
+            String fxmlFile = "/fxml/FactuurBeheer.fxml";
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+
+            FactuurBeheerController controller = new FactuurBeheerController();
+            controller.setData(login);
+
+            loader.setController(controller);
+            Parent root = loader.load();
+
+            controller.setMainApp(this);
+
+            Scene scene = new Scene(root);
+            stage.setTitle("FactuurBeheer");
+            stage.setScene(scene);
+        } catch (Exception e) {
+            System.out.println("!!! - " + e.getMessage());
+        }
+    }
+
+    public void laadKlantBeheer(String login) {
+        try {
+            String fxmlFile = "/fxml/KlantBeheer.fxml";
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+
+            KlantBeheerController controller = new KlantBeheerController(createAccountService());
+            controller.setData(login);
+
+            loader.setController(controller);
+            Parent root = loader.load();
+
+            controller.setMainApp(this);
+
+            Scene scene = new Scene(root);
+            stage.setTitle("KlantBeheer");
+            stage.setScene(scene);
+        } catch (Exception e) {
+            System.out.println("!!! - " + e.getMessage());
+        }
+
+    }
+
+    public void laadKlantToevoegen(String login) {
+        try {
+            String fxmlFile = "/fxml/KlantToevoegen.fxml";
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+
+            KlantToevoegenController controller = new KlantToevoegenController();
+            controller.setData(login);
+
+            loader.setController(controller);
+            Parent root = loader.load();
+
+            controller.setMainApp(this);
+
+            Scene scene = new Scene(root);
+            stage.setTitle("Klant Toevoegen");
             stage.setScene(scene);
         } catch (Exception e) {
             System.out.println("!!! - " + e.getMessage());

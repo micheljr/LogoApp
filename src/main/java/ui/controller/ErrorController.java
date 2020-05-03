@@ -20,6 +20,7 @@ public class ErrorController {
     }
 
     public void alert(){
+        System.out.println("knop geklikt!");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         StackTraceElement[] ste = e.getStackTrace();
         StringBuilder sb = new StringBuilder();
@@ -28,5 +29,6 @@ public class ErrorController {
             sb.append(s.toString()).append("\n");
         }
         alert.setContentText(sb.toString());
+        alert.show();
     }
 }

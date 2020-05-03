@@ -66,7 +66,7 @@ public class LoginController {
                 throw new ApplicationException(ApplicationExceptionType.ACCOUNT_NULL.getMessage());
             }
             if (PasswordEncryptor.verifyPassword(paswoord, account.getPaswoord())){
-                logoApp.laadKeuzeScherm(account.getLogin());
+                logoApp.laadMainScherm(account.getLogin());
             } else {
                 throw new ApplicationException(ApplicationExceptionType.ACCOUNT_PASWOORD_FOUT.getMessage());
             }

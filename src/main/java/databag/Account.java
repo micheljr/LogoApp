@@ -1,7 +1,5 @@
 package databag;
 
-import datatype.Geslacht;
-
 /**
  * Databag-class Transportmiddel voor een account
  * - private datamembers

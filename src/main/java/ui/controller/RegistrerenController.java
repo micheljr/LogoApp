@@ -60,7 +60,7 @@ public class RegistrerenController {
 
             String login = accountService.registrerenAccount(acc);
             if (login.length()<1) throw new DBException();
-            logoApp.laadKeuzeScherm(login);
+            logoApp.laadMainScherm(login);
 
         } catch (ApplicationException ae) {
             laErrorMessage.setText(ae.getMessage());
