@@ -7,7 +7,7 @@ public class securitytest {
 
         System.out.println("secret = " + secret);
 
-        System.out.println(PasswordEncryptor.verifyPassword("abcdefgi", secret));
+        System.out.println(PasswordEncryptor.verifyPassword("abcdefgh", secret));
 
     }
 }

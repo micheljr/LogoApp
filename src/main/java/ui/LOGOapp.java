@@ -53,6 +53,8 @@ public class LOGOapp extends Application {
         
     }
 
+    // TODO functionaliteit toevoegen om paswoord te laten zien on mouse press. In login.fxml
+
     public void laadErrorScherm(Exception dbe){
         try {
             String fxmlFile = "/fxml/Error.fxml";
