@@ -6,14 +6,12 @@ import exception.ApplicationExceptionType;
 import exception.DBException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.apache.commons.lang3.StringUtils;
 import security.PasswordEncryptor;
 import service.AccountService;
 import ui.LOGOapp;
-
-import java.awt.*;
-import java.net.URL;
 
 public class LoginController {
 
@@ -22,7 +20,9 @@ public class LoginController {
     @FXML
     private TextField tfLogin;
     @FXML
-    private TextField pwPaswoord;
+    private PasswordField pwPaswoord;
+    @FXML
+    private TextField tfPassword;
 
     private LOGOapp logoApp;
     private AccountService accountService;
@@ -76,6 +76,28 @@ public class LoginController {
             laErrorMessage.setText("Er is iets misgelopen, neem contact op met de programmeur");
             System.err.println(dbe.getMessage());
         }
+    }
+
+    /**
+     * Als op button "Show" word geklikt, eventjes wachtwoord
+     * in letters laten zien en dan na 1s terug maskeren.
+     */
+    public void showPassword(){
+        tfPassword.setText(pwPaswoord.getText());
+        pwPaswoord.setVisible(false);
+        tfPassword.setVisible(true);
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        tfPassword.setText("");
+                        tfPassword.setVisible(false);
+                        pwPaswoord.setVisible(true);
+                    }
+                },
+                1000
+        );
+
     }
 
     /**

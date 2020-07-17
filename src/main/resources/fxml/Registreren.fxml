@@ -15,7 +15,7 @@
       <Label layoutX="46.0" layoutY="96.0" text="Email: " />
       <Label layoutX="47.0" layoutY="140.0" text="Login:" />
       <Label layoutX="246.0" layoutY="140.0" text="Paswoord:" />
-      <PasswordField fx:id="pwPaswoord" layoutX="313.0" layoutY="136.0" prefHeight="27.0" prefWidth="147.0" />
+      <PasswordField fx:id="pwPaswoord" layoutX="313.0" layoutY="135.0" prefHeight="27.0" prefWidth="147.0" />
       <TextField fx:id="tfNaam" layoutX="87.0" layoutY="48.0" prefHeight="27.0" prefWidth="153.0" />
       <TextField fx:id="tfVoornaam" layoutX="313.0" layoutY="48.0" prefHeight="27.0" prefWidth="147.0" />
       <TextField fx:id="tfEmail" layoutX="86.0" layoutY="92.0" prefHeight="25.0" prefWidth="376.0" />
@@ -26,5 +26,11 @@
          </font>
       </Button>
       <Label fx:id="laErrorMessage" layoutX="19.0" layoutY="18.0" prefHeight="17.0" prefWidth="421.0" textFill="RED" />
+      <Button layoutX="470.0" layoutY="139.0" mnemonicParsing="false" onAction="#showPassword" prefHeight="22.0" prefWidth="43.0" text="Show">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Button>
+      <TextField fx:id="tfPassword" layoutX="313.0" layoutY="135.0" prefHeight="27.0" prefWidth="147.0" visible="false" />
    </children>
 </AnchorPane>

@@ -30,6 +30,8 @@ public class RegistrerenController {
     private PasswordField pwPaswoord;
     @FXML
     private Label laErrorMessage;
+    @FXML
+    private TextField tfPassword;
 
     public RegistrerenController(AccountService accS){
         this.accountService = accS;
@@ -69,6 +71,28 @@ public class RegistrerenController {
             System.err.println("Fout in registreren!");
             System.err.println(dbe.getMessage());
         }
+    }
+
+    /**
+     * Als op button "Show" word geklikt, eventjes wachtwoord
+     * in letters laten zien en dan na 1s terug maskeren.
+     */
+    public void showPassword(){
+        tfPassword.setText(pwPaswoord.getText());
+        pwPaswoord.setVisible(false);
+        tfPassword.setVisible(true);
+        new java.util.Timer().schedule(
+                new java.util.TimerTask() {
+                    @Override
+                    public void run() {
+                        tfPassword.setText("");
+                        tfPassword.setVisible(false);
+                        pwPaswoord.setVisible(true);
+                    }
+                },
+                1000
+        );
+
     }
 
     /**

@@ -22,7 +22,7 @@
          </font>
       </Label>
       <TextField fx:id="tfPassword" disable="true" editable="false" layoutX="134.0" layoutY="109.0" visible="false" />
-      <Button fx:id="buShowPassword" layoutX="308.0" layoutY="109.0" mnemonicParsing="false" onAction="#showPassword" prefHeight="27.0" prefWidth="39.0" text="Show">
+      <Button layoutX="308.0" layoutY="109.0" mnemonicParsing="false" onAction="#showPassword" prefHeight="27.0" prefWidth="39.0" text="Show">
          <font>
             <Font size="10.0" />
          </font>
